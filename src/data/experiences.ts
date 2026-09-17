@@ -22,8 +22,8 @@ const experiences: Experience[] = [
         },
         img_path: "/experiences/snd.png",
         description: {
-            en: `Responsible for the design and optimization of the Message Push Center and the Suzhou Science and Technology Museum cultural tourism project at SND`,
-            zh: `在 <a href="https://www.snddt.cn">苏高新数科</a> 负责消息推送中心和苏州科技馆文旅项目的设计与优化`
+            en: `Led the development of an enterprise-level distributed messaging platform at SND Digital, delivering millions of notifications across 10+ channels including WeCom and DingTalk. Simultaneously built the official service platform for Suzhou Science and Technology Museum with integrated booking and payment, stably serving 10,000+ daily visitors.`,
+            zh: `主导构建苏高新数科百万级分布式消息推送平台，覆盖企微、钉钉等10+渠道；同时打造苏州科技馆官方服务平台，集成预约支付等核心功能，日均稳健服务万+人次。`
         },
         link: {
             en: "https://www.snddt.cn",
@@ -42,8 +42,8 @@ const experiences: Experience[] = [
         },
         img_path: "/experiences/hyperchain.png",
         description: {
-            en: "Built enterprise backend applications and developed practical experience with Spring Boot, MySQL, Redis, message queues, and distributed systems.",
-            zh: "参与企业级后端应用建设，积累了 Spring Boot、MySQL、Redis、消息队列和分布式系统的项目实践经验"
+            en: "Spearheaded the development of Hyperchain's data collaboration platform DataExplorer and middleware DataFlow. Combining blockchain with privacy computing, it achieves \"usable but invisible\" data sharing, breaks down data silos, and powers government applications such as anti-fraud privacy blacklists.",
+            zh: "主导研发趣链科技数据协作平台 DataExplorer 与中间件 DataFlow，融合区块链与隐私计算，实现数据“可用不可见”，构建隐私黑名单等政务应用，打破数据孤岛。"
         }
     },
     {

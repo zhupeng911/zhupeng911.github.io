@@ -31,7 +31,7 @@ const { locale } = useI18n()
       <v-card variant="text">
         <v-card-item>
           <v-card-title class="pb-2 pt-2">
-            <h2 style="text-align: center;">Peng Zhu | 朱鹏</h2>
+            <h2 style="text-align: center;">Peng Zhu | 朱鹏 | 党员</h2>
           </v-card-title>
           <v-card-text class="mt-4">
             <p style="margin-top: 14px;" v-html="$t('home.bio')">
@@ -150,14 +150,28 @@ const { locale } = useI18n()
         <h2 class="card-title">{{ $t('sections.project') }}</h2>
       </v-card-title>
       <v-card-text class="mt-3">
-        <v-row v-for="project in projects" :key="project.name.en" class="mt-1">
-          <v-col>
-            <p v-if="project.link"><a :href="project.link" target="_blank" v-html="project.name[locale] || project.name.en" style="font-size: 17px"></a></p>
-            <p v-else v-html="project.name[locale] || project.name.en" style="font-size: 17px"></p>
-            <p v-html="project.description[locale] || project.description.en" style="font-size: 14px; color: #999; margin-top: 2px;"></p>
-            <p v-html="project.time" style="font-size: 14px; color: #999; margin-top: 2px;"></p>
-          </v-col>
-        </v-row>
+        <div class="project-list">
+          <article v-for="project in projects" :key="project.name.en" class="project-entry">
+            <a
+              v-if="project.link"
+              :href="project.link"
+              target="_blank"
+              v-html="project.name[locale] || project.name.en"
+              class="project-title">
+            </a>
+            <p
+              v-else
+              v-html="project.name[locale] || project.name.en"
+              class="project-title">
+            </p>
+            <p
+              v-if="project.description[locale] || project.description.en"
+              v-html="project.description[locale] || project.description.en"
+              class="project-description">
+            </p>
+            <p v-html="project.time" class="project-time"></p>
+          </article>
+        </div>
       </v-card-text>
     </v-card-item>
   </v-card>
