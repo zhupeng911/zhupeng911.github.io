@@ -59,18 +59,30 @@ const { locale } = useI18n()
         <h2 class="card-title">{{ $t('sections.experience') }}</h2>
       </v-card-title>
       <v-card-item>
-        <v-row v-for="experience in experiences" class="mt-4">
-          <v-col v-if="experience.img_path" cols="12" md="3" class="d-flex align-center justify-center">
-            <v-img :src="experience.img_path" style="max-width: 280px;"></v-img>
-          </v-col>
-          <v-divider v-if="experience.img_path" vertical></v-divider>
-          <v-col cols="12" :md="experience.img_path ? 9 : 12">
-            <a v-if="experience.link" :href="experience.link[locale] || experience.link.en" target="_blank" v-html="experience.title[locale] || experience.title.en" style="font-size: 24px; color: #111"></a>
-            <p v-else v-html="experience.title[locale] || experience.title.en" style="font-size: 24px; color: #111"></p>
-            <p v-html="experience.time[locale] || experience.time.en" style="font-size: 14px; color: #555; margin-top: 5px;"></p>
-            <p v-html="experience.description[locale] || experience.description.en" style="font-size: 16px; color: #555; margin-top: 5px;"></p>
-          </v-col>
-        </v-row>
+        <div class="experience-list">
+          <article v-for="experience in experiences" class="experience-entry">
+            <div class="experience-media">
+              <img v-if="experience.img_path" :src="experience.img_path" class="experience-logo" />
+            </div>
+            <div class="experience-divider"></div>
+            <div class="experience-content">
+              <a
+                v-if="experience.link"
+                :href="experience.link[locale] || experience.link.en"
+                target="_blank"
+                v-html="experience.title[locale] || experience.title.en"
+                class="experience-title">
+              </a>
+              <p
+                v-else
+                v-html="experience.title[locale] || experience.title.en"
+                class="experience-title">
+              </p>
+              <p v-html="experience.time[locale] || experience.time.en" class="experience-time"></p>
+              <p v-html="experience.description[locale] || experience.description.en" class="experience-description"></p>
+            </div>
+          </article>
+        </div>
       </v-card-item>
     </v-card-item>
   </v-card>
