@@ -1,58 +1,78 @@
 import type { LocaleText } from '@/types/i18n'
 
 interface Experience {
-	title: LocaleText;
-	time: LocaleText;
-	img_path: string;
-	description: LocaleText;
-	link: LocaleText;
+  title: LocaleText;
+  time: LocaleText;
+  img_path?: string;
+  description: LocaleText;
+  link?: LocaleText;
 }
 
 const experiences: Experience[] = [
-    {
-		title: {
-			en: "DeepSeek-AI",
-			zh: "深度求索（DeepSeek-AI）"
-		},
-		time: {
-			en: "2025.4 - current",
-			zh: "2025.4 - 至今"
-		},
-		img_path: "/experiences/deepseek.png",
-		description: {
-			en: `Working on <b>Machine Learning Systems (MLSys)</b> and <b>kernel design & optimization</b> at <a href="https://www.deepseek.com/">DeepSeek-AI</a> in Hangzhou, Zhejiang, China.`,
-			zh: `在 <a href="https://www.deepseek.com/">DeepSeek-AI</a> 负责<b>机器学习系统（MLSys）</b>及<b>算子（Kernel）设计与优化</b>。<br />`
-		},
-		link: {
-			en: "https://www.deepseek.com/en/",
-			zh: "https://www.deepseek.com/"
-		}
-	},
-	{
-		title: {
-			en: "Peking University (PKU)",
-			zh: "北京大学"
-		},
-		time: {
-			en: "2021.9 - 2025.7",
-			zh: "2021.9 - 2025.7"
-		},
-		img_path: "/experiences/pku.png",
-		description: {
-			en: `
-            I was a student in the <a href="https://cfcs.pku.edu.cn/english/research/turing_program/introduction1/index.htm">Turing Class</a> at <a href="https://eecs.pku.edu.cn/en/">the School of EECS</a>, <a href="https://english.pku.edu.cn/"><b>Peking University (PKU)</b></a>, enrolled since September 2021. <br />
-            Under the advisement of Prof. <a href="https://xinjin.github.io/index.html">Xin Jin</a>, my research focuses on <b>Machine Learning Systems (MLSys)</b>, <b>Machine Learning Compilers</b>, and <b>Distributed Systems</b>. <br />
-            I was also the <b>team leader</b> of the <a href="https://hpc.pku.edu.cn/pkusc/en/">Peking University Supercomputing Team</a>, and we won the <b>First Place</b> at the 10th ASC and the <b>Second Place</b> at SC23 (both are top-tier Supercomputing competitions in the world).`,
-			zh: `
-            我曾是 2021 级<a href="https://eecs.pku.edu.cn/">北京大学信息科学技术学院</a>的<a href="https://cfcs.pku.edu.cn/english/research/turing_program/introduction1/index.htm">图灵班</a>的学生。<br />
-            我的导师是<a href="https://xinjin.github.io/index.html">金鑫</a>副教授，我的研究方向是<b>机器学习系统（MLSys）</b>、<b>机器学习编译器</b>和<b>分布式系统</b>。<br />
-            我曾作为<a href="https://hpc.pku.edu.cn/pkusc/zh-cn/">北京大学超算队</a>的<b>队长</b>，带队获得第十届 ASC <b>第一名</b>和 SC23 的<b>第二名</b>（均为世界顶级超算竞赛）。`
-		},
-		link: {
-			en: "https://english.pku.edu.cn/",
-			zh: "https://www.pku.edu.cn/"
-		}
-	}
+  {
+    title: {
+      en: "Suzhou SND Digital Technology Co., Ltd.",
+      zh: "苏州苏高新数字科技有限公司"
+    },
+    time: {
+      en: "2023.03 - current | Intermediate Java Backend Engineer",
+      zh: "2023.03 - 至今 | 中级 Java 开发工程师"
+    },
+    img_path: "/experiences/snd.png",
+    description: {
+      en: "Focuses on distributed systems, microservice architecture, high-concurrency services, and AI application integration. Led core development for reservation, message delivery, and smart digital operations platforms.",
+      zh: "专注于分布式系统、微服务架构、高并发服务和 AI 应用集成，负责预约平台、消息推送中心和智慧数字运营平台的核心开发。"
+    },
+    link: {
+      en: "https://www.snddt.cn",
+      zh: "https://www.snddt.cn"
+    }
+  },
+  {
+    title: {
+      en: "QuChain Technology",
+      zh: "杭州趣链科技有限公司"
+    },
+    time: {
+      en: "2021.05 - 2023.02 | Intermediate Java Backend Engineer",
+      zh: "2021.05 - 2023.02 | 中级 Java 开发工程师"
+    },
+    img_path: "/experiences/hyperchain.png",
+    description: {
+      en: "Built enterprise backend applications and developed practical experience with Spring Boot, MySQL, Redis, message queues, and distributed systems.",
+      zh: "参与企业级后端应用建设，积累了 Spring Boot、MySQL、Redis、消息队列和分布式系统的项目实践经验。"
+    }
+  },
+  {
+    title: {
+      en: "Nanjing University of Posts and Telecommunications",
+      zh: "南京邮电大学"
+    },
+    time: {
+      en: "2018.09 - 2021.04 | Master of Computer Technology",
+      zh: "2018.09 - 2021.04 | 计算机技术专业硕士"
+    },
+    img_path: "/experiences/njupt.png",
+    description: {
+      en: "Graduated with a master's degree in Computer Technology. Published one CCF-B journal paper in Computers & Security, an SCI Q2 journal, with 200+ citations according to the supplied resume.",
+      zh: "获得计算机技术专业硕士学位。在 Computers & Security 发表 1 篇 CCF-B 期刊论文（SCI 二区），简历记载引用 200+。"
+    }
+  },
+  {
+    title: {
+      en: "Nanjing University of Information Science and Technology Binjiang College",
+      zh: "南京信息工程大学滨江学院"
+    },
+    time: {
+      en: "2014.09 - 2018.06 | Bachelor of Software Engineering",
+      zh: "2014.09 - 2018.06 | 软件工程本科"
+    },
+    img_path: "/experiences/inuist.jpg",
+    description: {
+      en: "Earned a bachelor's degree in Software Engineering.",
+      zh: "获得软件工程学士学位。"
+    }
+  }
 ]
 
 export {experiences, type Experience}
