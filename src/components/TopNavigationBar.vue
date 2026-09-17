@@ -29,28 +29,36 @@ const { toggleLocale, locale } = useLocale()
 				{{ $t('nav.home') }}
 			</v-btn>
 			<v-btn
-				to="/#card-experience"
+				to="/#card-education"
+			class="mr-4"
+			prepend-icon="mdi-school"
+			:active="false"
+			>
+				{{ $t('nav.education') }}
+			</v-btn>
+			<v-btn
+			to="/#card-work"
+			class="mr-4"
+			prepend-icon="mdi-briefcase"
+			:active="false"
+			>
+				{{ $t('nav.work') }}
+			</v-btn>
+			<v-btn
+			to="/#card-paper"
 			class="mr-4"
 			prepend-icon="mdi-bookshelf"
 			:active="false"
 			>
-				{{ $t('nav.publications') }}
+				{{ $t('nav.paper') }}
 			</v-btn>
 			<v-btn
-			to="/#card-awards"
-			class="mr-4"
-			prepend-icon="mdi-license"
-			:active="false"
-			>
-				{{ $t('nav.awards') }}
-			</v-btn>
-			<v-btn
-			to="/#card-projects"
+			to="/#card-project"
 			class="mr-4"
 			prepend-icon="mdi-hammer-screwdriver"
 			:active="false"
 			>
-				{{ $t('nav.projects') }}
+				{{ $t('nav.project') }}
 			</v-btn>
 			<v-btn
 			class="mr-4"

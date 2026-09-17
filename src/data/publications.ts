@@ -1,9 +1,9 @@
 import type {LocaleText} from '@/types/i18n'
 
 interface Publication {
-    title: string;
-    authors: string;
-    time: string;
+    title: LocaleText;
+    authors: LocaleText;
+    time: LocaleText;
     img_path?: string;
     description: LocaleText;
     submit_status: LocaleText;
@@ -12,9 +12,18 @@ interface Publication {
 
 const publications: Publication[] = [
     {
-        title: "A Blockchain-based Scheme for Privacy-Preserving and Secure Sharing of Medical Data",
-        authors: "Haiping Huang, Peng Zhu et al.",
-        time: "2020.10 | CCF-B | Computers & Security | SCI Q2",
+        title: {
+            en: "A Blockchain-based Scheme for Privacy-Preserving and Secure Sharing of Medical Data",
+            zh: "基于区块链的医疗数据隐私保护与安全共享方案"
+        },
+        authors: {
+            en: "Haiping Huang, Peng Zhu et al.",
+            zh: "Haiping Huang, Peng Zhu et al."
+        },
+        time: {
+            en: "2020.10 | CCF-B | Computers & Security | SCI Q2",
+            zh: "2020.10 | CCF-B | Computers & Security | SCI 二区"
+        },
         img_path: "/publications/paper_1.png",
         description: {
             en: "A journal paper on privacy-preserving and secure medical data sharing based on blockchain technology. The supplied resume records 200+ citations.",
@@ -27,9 +36,18 @@ const publications: Publication[] = [
         link: "https://www.sciencedirect.com/science/article/pii/S0167404820302832"
     },
     {
-        title: "Blockchain-based eHealth system for auditable EHRs manipulation in cloud environments",
-        authors: "Haiping Huang, Xiang Sun, Peng Zhu et al.",
-        time: "2021.10 | CCF-B | Journal of Parallel and Distributed Computing",
+        title: {
+            en: "Blockchain-based eHealth system for auditable EHRs manipulation in cloud environments",
+            zh: "基于区块链的云环境下可审计电子健康记录操作系统"
+        },
+        authors: {
+            en: "Haiping Huang, Xiang Sun, Peng Zhu et al.",
+            zh: "Haiping Huang, Xiang Sun, Peng Zhu et al."
+        },
+        time: {
+            en: "2021.10 | CCF-B | Journal of Parallel and Distributed Computing",
+            zh: "2021.10 | CCF-B | Journal of Parallel and Distributed Computing"
+        },
         img_path: "/publications/paper_2.png",
         description: {
             en: "A journal paper on blockchain-based eHealth system for auditable EHRs manipulation in cloud environments. The supplied resume records 70+ citations.",
@@ -42,9 +60,18 @@ const publications: Publication[] = [
         link: "https://www.sciencedirect.com/science/article/pii/S0743731520303853"
     },
     {
-        title: "国家发明专利：基于多层次区块链体系架构的智慧医疗数据存储方案",
-        authors: "黄海平;朱鹏;",
-        time: "2019.10 | 国家发明专利",
+        title: {
+            en: "National Invention Patent: Smart Healthcare Data Storage Scheme Based on Multi-Layered Blockchain Architecture",
+            zh: "国家发明专利：基于多层次区块链体系架构的智慧医疗数据存储方案"
+        },
+        authors: {
+            en: "Haiping Huang, Peng Zhu",
+            zh: "黄海平;朱鹏"
+        },
+        time: {
+            en: "2019.10 | National Invention Patent",
+            zh: "2019.10 | 国家发明专利"
+        },
         img_path: "/publications/patent_1.png",
         description: {
             en: "Smart Healthcare Data Storage Scheme Based on Multi-Layered Blockchain Architecture",
@@ -57,24 +84,18 @@ const publications: Publication[] = [
         link: "https://www.zhangqiaokeyan.com/patent-detail/06120103279015.html"
     },
     {
-        title: "国家发明专利：一种基于区块链的可问责的医疗数据存储方法",
-        authors: "黄海平;孙翔;肖甫;朱鹏",
-        time: "2019.11 | 国家发明专利",
-        img_path: "/publications/patent_2.png",
-        description: {
-            en: "An Accountable Medical Data Storage Method Based on Blockchain",
-            zh: "一种基于区块链的可问责的医疗数据存储方法"
+        title: {
+            en: "National Invention Patent: Account Data Processing Method, Apparatus, Terminal, and Storage Medium",
+            zh: "国家发明专利：一种账户数据处理方法、装置、终端及存储介质"
         },
-        submit_status: {
-            en: "Publication number: CN110851878B",
-            zh: "公开号：CN110851878B"
+        authors: {
+            en: "Xiaoyi Wang, Peng Zhu",
+            zh: "汪小益;朱鹏"
         },
-        link: "https://d.wanfangdata.com.cn/patent/Ch1QYXRlbnROZXdTb2xyOVMyMDI2MDgxMzE3MDM0MhIpWkxfQ04yMDE5MTExMzg0NzQuMV9DTjExMDg1MTg3OEJfMjAyMjEwMTEaCHA0OTE4YjR0"
-    },
-    {
-        title: "国家发明专利：一种账户数据处理方法、装置、终端及存储介质",
-        authors: "汪小益;朱鹏",
-        time: "2022.07 | 国家发明专利",
+        time: {
+            en: "2022.07 | National Invention Patent",
+            zh: "2022.07 | 国家发明专利"
+        },
         img_path: "/publications/patent_3.png",
         description: {
             en: "Account Data Processing Method and Apparatus",

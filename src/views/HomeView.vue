@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { awards } from "@/data/awards"
 import { publications } from "@/data/publications"
 import { projects } from "@/data/projects"
-import { experiences } from "@/data/experiences"
+import { educationExperiences, workExperiences } from "@/data/experiences"
 
 const { locale } = useI18n()
 </script>
@@ -53,14 +52,14 @@ const { locale } = useI18n()
   </v-row>
   <v-divider class="mt-10 mb-4"></v-divider>
 
-  <v-card variant="text" class="mt-4" id="card-experience">
+  <v-card variant="text" class="mt-4" id="card-education">
     <v-card-item>
       <v-card-title>
-        <h2 class="card-title">{{ $t('sections.experience') }}</h2>
+        <h2 class="card-title">{{ $t('sections.education') }}</h2>
       </v-card-title>
       <v-card-item>
         <div class="experience-list">
-          <article v-for="experience in experiences" class="experience-entry">
+          <article v-for="experience in educationExperiences" :key="experience.title.en" class="experience-entry">
             <div class="experience-media">
               <img v-if="experience.img_path" :src="experience.img_path" class="experience-logo" />
             </div>
@@ -87,59 +86,71 @@ const { locale } = useI18n()
     </v-card-item>
   </v-card>
 
-  <v-card variant="text" class="mt-4" id="card-publications">
+  <v-card variant="text" class="mt-4" id="card-work">
     <v-card-item>
       <v-card-title>
-        <h2 class="card-title">{{ $t('sections.publications') }}</h2>
+        <h2 class="card-title">{{ $t('sections.work') }}</h2>
       </v-card-title>
       <v-card-item>
-        <v-row v-for="publication in publications" class="mt-4">
+        <div class="experience-list">
+          <article v-for="experience in workExperiences" :key="experience.title.en" class="experience-entry">
+            <div class="experience-media">
+              <img v-if="experience.img_path" :src="experience.img_path" class="experience-logo" />
+            </div>
+            <div class="experience-divider"></div>
+            <div class="experience-content">
+              <a
+                v-if="experience.link"
+                :href="experience.link[locale] || experience.link.en"
+                target="_blank"
+                v-html="experience.title[locale] || experience.title.en"
+                class="experience-title">
+              </a>
+              <p
+                v-else
+                v-html="experience.title[locale] || experience.title.en"
+                class="experience-title">
+              </p>
+              <p v-html="experience.time[locale] || experience.time.en" class="experience-time"></p>
+              <p v-html="experience.description[locale] || experience.description.en" class="experience-description"></p>
+            </div>
+          </article>
+        </div>
+      </v-card-item>
+    </v-card-item>
+  </v-card>
+
+  <v-card variant="text" class="mt-4" id="card-paper">
+    <v-card-item>
+      <v-card-title>
+        <h2 class="card-title">{{ $t('sections.paper') }}</h2>
+      </v-card-title>
+      <v-card-item>
+        <v-row v-for="publication in publications" :key="publication.title.en" class="mt-4">
           <v-col v-if="publication.img_path" cols="12" md="3">
             <v-img :src="publication.img_path" style="max-width: 280px; margin-top: 10px"></v-img>
           </v-col>
           <v-divider v-if="publication.img_path" vertical></v-divider>
           <v-col cols="12" :md="publication.img_path ? 9 : 12">
-            <a v-if="publication.link" :href="publication.link" target="_blank" v-html="publication.title" style="font-size: 17px"></a>
-            <p v-else v-html="publication.title" style="font-size: 17px"></p>
-            <p v-if="publication.authors" v-html="publication.authors" style="font-size: 14px"></p>
+            <a v-if="publication.link" :href="publication.link" target="_blank" v-html="publication.title[locale] || publication.title.en" style="font-size: 17px"></a>
+            <p v-else v-html="publication.title[locale] || publication.title.en" style="font-size: 17px"></p>
+            <p v-if="publication.authors" v-html="publication.authors[locale] || publication.authors.en" style="font-size: 14px"></p>
             <p v-html="publication.description[locale] || publication.description.en" style="font-size: 14px; color: #999; margin-top: 5px;"></p>
-            <p v-html="publication.time" style="font-size: 14px; color: #999; margin-top: 5px;"></p>
+            <p v-html="publication.time[locale] || publication.time.en" style="font-size: 14px; color: #999; margin-top: 5px;"></p>
             <p v-html="publication.submit_status[locale] || publication.submit_status.en" style="font-size: 14px; color: #555; margin-top: 5px;"></p>
           </v-col>
         </v-row>
-        <p v-if="$t('sections.equalContribution')" style="color: #888; font-size: 14px; margin-top: 20px;">{{ $t('sections.equalContribution') }}</p>
       </v-card-item>
     </v-card-item>
   </v-card>
 
-  <v-card variant="text" class="mt-4" id="card-awards">
+  <v-card variant="text" class="mt-2" id="card-project">
     <v-card-item>
       <v-card-title>
-        <h2 class="card-title">{{ $t('sections.awards') }}</h2>
+        <h2 class="card-title">{{ $t('sections.project') }}</h2>
       </v-card-title>
       <v-card-text class="mt-3">
-        <v-list>
-          <v-list-item v-for="award in awards" :key="award.name.en" class="mt-1">
-            <template v-slot:prepend>
-              <v-icon icon="mdi-circle" size="10"></v-icon>
-            </template>
-            <v-list-item-title class="text-wrap">
-              <h3 style="font-size: 17px" v-html="award.name[locale] || award.name.en"></h3>
-            </v-list-item-title>
-            <p style="font-size: 13px; white-space: normal; text-wrap: wrap; color: #999" v-html="award.year + (award.description[locale] || award.description.en ? ', ' : '') + (award.description[locale] || award.description.en)"></p>
-          </v-list-item>
-        </v-list>
-      </v-card-text>
-    </v-card-item>
-  </v-card>
-
-  <v-card variant="text" class="mt-2" id="card-projects">
-    <v-card-item>
-      <v-card-title>
-        <h2 class="card-title">{{ $t('sections.projects') }}</h2>
-      </v-card-title>
-      <v-card-text class="mt-3">
-        <v-row v-for="project in projects" class="mt-1">
+        <v-row v-for="project in projects" :key="project.name.en" class="mt-1">
           <v-col>
             <p v-if="project.link"><a :href="project.link" target="_blank" v-html="project.name[locale] || project.name.en" style="font-size: 17px"></a></p>
             <p v-else v-html="project.name[locale] || project.name.en" style="font-size: 17px"></p>
