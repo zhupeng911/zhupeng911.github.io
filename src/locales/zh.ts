@@ -2,23 +2,23 @@ export default {
   nav: {
     name: '朱鹏',
     home: '主页',
-    publications: '学术成果',
-    awards: '证书与专利',
+    publications: '论文',
+    awards: '获奖',
     projects: '项目',
   },
 
   home: {
-    bio: '我是一名拥有 5 年经验的<b> Java 后端开发工程师</b>，毕业于<a href="https://www.njupt.edu.cn" target="_blank"><b>南京邮电大学</b></a>计算机技术专业，获专业硕士学位。目前在<a href="https://www.snddt.cn" target="_blank"><b>苏高新数科</b></a>负责微服务、分布式系统、高并发业务和 AI 应用集成。',
+    bio: '拥有 5 年经验的<b> Java 后端开发工程师</b>，毕业于<a href="https://www.njupt.edu.cn" target="_blank"><b>南京邮电大学</b></a>计算机技术专业，专业硕士。目前在<a href="https://www.snddt.cn" target="_blank"><b>苏高新数科</b></a>专注于微服务、分布式系统、高并发业务和 AI 应用集成。',
     email: '邮箱',
-    blog: '技术博客',
+    blog: 'CSDN博客',
     wechat: '微信',
     wechatOfficial: '微信公众号',
   },
 
   sections: {
     experience: '经历',
-    publications: '学术成果',
-    awards: '证书与专利',
+    publications: '论文发表',
+    awards: '获奖荣誉',
     projects: '项目',
     equalContribution: '',
   },

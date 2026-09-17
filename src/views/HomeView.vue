@@ -147,9 +147,6 @@ const { locale } = useI18n()
         <span v-html="$t('footer.builtWith')"></span> <br />
         <span v-html="$t('footer.sourceCode')"></span>
       </p>
-      <p style="text-align: center;" class="mt-2">
-        <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fzhupeng911.github.io&count_bg=%2388eeff&title_bg=%23DDDDDD&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true"/></a>
-      </p>
     </v-col>
   </v-row>
 </template>
